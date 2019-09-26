@@ -15,7 +15,11 @@ RUN source /var/local/rvm/scripts/rvm && \
     rvm install 2.3.1 && \
     rvm use --default 2.3.1 && \
     echo -e "y/n" | gem uninstall -i /var/local/rvm/gems/ruby-2.3.1@global bundler && \
-    echo "source /var/local/rvm/scripts/rvm" >/.bashrc
+    echo -e "#!/bin/bash\nsource /var/local/rvm/scripts/rvm && /bin/bash" >/usr/local/bin/init.sh && \
+    chmod 755 /usr/local/bin/init.sh
 
+RUN ln -s /usr/local/bin/init.sh / # backwards compat
+
+ENTRYPOINT ["init.sh"]
 
 
