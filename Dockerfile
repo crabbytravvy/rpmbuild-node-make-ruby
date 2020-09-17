@@ -1,6 +1,6 @@
 FROM centos:7
 RUN curl --silent --location https://rpm.nodesource.com/setup_12.x | bash - && \
-    yum install -y rpmdevtools mock sudo man nodejs make postgresql-devel openldap compat-openldap openldap-clients openldap-servers openldap-servers-sql openldap-devel gnupg which autoconf automake bison gcc-c++ libffi-devel libtool readline-devel ruby sqlite-devel zlib-devel glibc-headers glibc-devel openssl-devel openssh-clients git nfs-utils mkisofs python-pip&& \
+    yum install -y rpmdevtools mock sudo man nodejs make postgresql-devel openldap compat-openldap openldap-clients openldap-servers openldap-servers-sql openldap-devel gnupg which autoconf automake bison gcc-c++ libffi-devel libtool readline-devel ruby sqlite-devel zlib-devel glibc-headers glibc-devel openssl-devel openssh-clients git nfs-utils mkisofs epel-release python-pip&& \
     mkdir /var/local/rvm /.npm && \
     chmod 777 /var/local/rvm /.npm && \
     gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB && \
