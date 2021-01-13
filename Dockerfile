@@ -1,6 +1,6 @@
 FROM centos:7
 RUN curl --silent --location https://rpm.nodesource.com/setup_12.x | bash - && \
-    yum install -y rpmdevtools mock sudo man nodejs make postgresql-devel openldap compat-openldap openldap-clients openldap-servers openldap-servers-sql openldap-devel gnupg which autoconf automake bison gcc-c++ libffi-devel libtool readline-devel ruby sqlite-devel zlib-devel glibc-headers glibc-devel openssl-devel openssh-clients git nfs-utils mkisofs epel-release&& \
+    yum install -y rpmdevtools mock sudo man nodejs make postgresql-devel openldap compat-openldap openldap-clients openldap-servers openldap-servers-sql openldap-devel gnupg which autoconf automake bison gcc-c++ libffi-devel libtool readline-devel ruby sqlite-devel zlib-devel glibc-headers glibc-devel openssl-devel openssh-clients git nfs-utils mkisofs epel-release createrepo&& \
     rpm --import http://download.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7 && \
     yum install -y python-pip && \
     mkdir /var/local/rvm /.npm && \
